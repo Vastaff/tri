@@ -1,8 +1,8 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
-
+# имя, которое будет показано в интерфейсе github.com
+name: Tel_bot_news
+# список событий, при которых будут запускаться задания
 on:
-  # Runs on pushes targeting the default branch
+  # на push и pull_request, только для ветки main
   push:
     branches: ["main"]
 
