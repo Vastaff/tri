@@ -6,23 +6,23 @@ on:
   workflow_dispatch:
   # чтобы он запускался каждый день недели в 7:00 по Гринвичу
   schedule:
-  - cron: '0 7 ***'
+    - cron: '0 7 * * *'
 
 # одно или несколько заданий, которые могут быть запущены параллельно или последовательно
 jobs:
  # у этого workflow всего одна задача single
   single:
     runs-on: ubuntu-latest
+    # шаги задания запускаются последовательно
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # запуск одной shell-команды
+      - name: Run step one
+        run: echo "Single job, step one, single command"
+
+      # запуск двух shell-команд
+      - name: Run step two
+        run: |
+          echo "Single job, step two, command one"
+          echo "Single job, step two, command two"
