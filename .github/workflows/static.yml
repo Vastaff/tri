@@ -2,31 +2,16 @@
 name: Tel_bot_news
 # список событий, при которых будут запускаться задания
 on:
-  # на push и pull_request, только для ветки main
-  push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+  # Чтобы вручную запустить рабочий процесс
   workflow_dispatch:
+  # чтобы он запускался каждый день недели в 7:00 по Гринвичу
+  schedule:
+  - cron: '0 7 ***'
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
+# одно или несколько заданий, которые могут быть запущены параллельно или последовательно
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+ # у этого workflow всего одна задача single
+  single:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
