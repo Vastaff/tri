@@ -25,9 +25,11 @@ jobs:
       - name: Install dependencies 
         run: npm install 
       - name: Run script 
-        run: node gh.js 
+        env: 
+          TG_KEY: ${{ secrets.TG_KEY }}
+      #  run: node gh.js 
       # запуск одной shell-команды
-      - name: Run step one
-        run: echo "Single job, step one, single command"
+      #- name: Run step one
+        run: echo "Single job, step one, single command $TG_KEY"
 
      
