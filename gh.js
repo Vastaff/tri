@@ -1,1 +1,1 @@
-console.log('Привет на Хабе')
+console.log('Привет на Хабе и $TG_KEY')
