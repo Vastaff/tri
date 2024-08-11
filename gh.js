@@ -1,2 +1,5 @@
-console.log('Привет на Хабе и ${{secret.TG_KEY}}');
+const token = process.env.TG_KEY;
+
+console.log('Привет на Хабе и ${token}');
+console.log(token);
 
