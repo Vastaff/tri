@@ -2,6 +2,7 @@
   "name": "hf",
   "version": "1.0.0",
   "main": "gh.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
