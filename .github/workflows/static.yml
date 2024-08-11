@@ -27,6 +27,7 @@ jobs:
       - name: Run script 
         env: 
           TG_KEY: ${{ secrets.TG_KEY }}
+          HF_KEY: ${{ secrets.HF_KEY }}
         run: node gh.js 
       # запуск одной shell-команды
       - name: Run step one
